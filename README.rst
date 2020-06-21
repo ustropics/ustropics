@@ -4,26 +4,41 @@ Connecting to Project
 
 Below are critical steps towards setting up and initializing the USTropics framework. There are some initial requirements for running this framework:
 
+* `Ubuntu Environment on Windows
+  <https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab>`_
+
 * `Python 3.7+
   <http://docs.django-cms.org/en/latest/#software-version-requirements-and-release-notes>`_
 
 * `PIP 18.0+
   <https://pip.pypa.io/en/stable/>`_
 
-* `Ubuntu Environment on Windows
-  <https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab>`_
+* `Virtualenv 16.4+
+  <https://pypi.org/project/virtualenv/>`_
 
-* `Django Web framework
+* `Django Web Framework
   <https://www.djangoproject.com/>`_
+
+* `Github Account
+  <https://github.com/>`_
 
 ****************
 Initial Startup
 ****************
 
-.. Run Ubuntu.exe::
-* ``cd /mnt/c/Apache24/htdocs/website``
-* ``source env/bin/activate``
-* ``./manage.py runserver``
+This will cover the initial construction of virtual environment (env), download django framework, and create new_project directory files
+
+
+Run Ubuntu.exe
+  * ``cd /mnt/c/path/to/project``
+  * ``virtualenv env``
+  * ``source env/bin/activate``
+  * ``pip install django``
+  * ``django-admin startproject project_name``
+
+
+  * ``source env/bin/activate``
+  * ``./manage.py runserver``
 
 **********************************
 Initialize GIT and Upload Project
