@@ -4,8 +4,8 @@ Connecting to Project
 
 Below are critical steps towards setting up and initializing the USTropics framework. There are some initial requirements for running this framework:
 
-`Python 3.7+
-<http://docs.django-cms.org/en/latest/#software-version-requirements-and-release-notes>`_
+* `Python 3.7+
+  <http://docs.django-cms.org/en/latest/#software-version-requirements-and-release-notes>`_
 
 .. _Python: http://www.python.org/
 * Ubuntu_ `Environment on Windows`__.
