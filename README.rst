@@ -26,7 +26,8 @@ Below are critical steps towards setting up and initializing the USTropics frame
 Initial Startup
 ****************
 
-This will cover the initial construction of virtual environment (env), download django framework, and create new_project directory files
+This will cover the initial construction of virtual environment (env), download django framework, and create new_project directory files. Users will have already needed to
+established a linux-based OS (this tutorial uses Ubuntu on Windows).
 
 
 Run Ubuntu.exe
@@ -36,13 +37,17 @@ Run Ubuntu.exe
   * ``pip install django``
   * ``django-admin startproject project_name``
 
-
+After intial setup above, if you ever need to reconnect to your project, you can simply use these commands below:
+  * ``cd /mnt/c/path/to/project``
   * ``source env/bin/activate``
   * ``./manage.py runserver``
+
 
 **********************************
 Initialize GIT and Upload Project
 **********************************
+
+It's good practice to connect Github to user projects. Below we will quickly outline these processes. See Github requirements above.
 
 Run git.bash
   * ``cd /path/to/project``
@@ -54,7 +59,7 @@ add .gitignore file to /path/to/project::
   *~
   /.vscode
   __pycache__
-  myvenv
+  env
   db.sqlite3
   /static
   .DS_Store
@@ -62,6 +67,6 @@ add .gitignore file to /path/to/project::
 check git status and add files
   * ``git status``
   * ``git add --all``
-  * ``git remote add origin https://github.com/drphillgood/ustropics.git``
+  * ``git remote add origin https://github.com/<YOUR_ACCOUNT_NAME>/<PROJECT_NAME>.git``
   * ``git commit -am "first commit"``
   * ``git push -u origin master``
