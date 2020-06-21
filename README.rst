@@ -36,11 +36,13 @@ run Ubuntu.exe
   * ``source env/bin/activate``
   * ``pip install django``
   * ``django-admin startproject project_name``
+  * ``cd project_name``
 
 After initial setup above, if user ever need to reconnect to their project, user can simply use these commands below:
 
 * ``cd /mnt/c/path/to/project``
 * ``source env/bin/activate``
+* ``cd project_name``
 * ``./manage.py runserver``
 
 
@@ -65,7 +67,7 @@ add .gitignore file to /path/to/project::
   /static
   .DS_Store
 
-We fist should check git status (ensure we are reading files), initialize an origin connection, and push our first commit to origin branch:
+We fist should check ``git status`` (ensure we are reading files), initialize an origin connection, and push our first commit to origin branch:
 
 * ``git status``
 * ``git add --all``
@@ -73,7 +75,17 @@ We fist should check git status (ensure we are reading files), initialize an ori
 * ``git commit -am "first commit"``
 * ``git push -u origin master``
 
-After initial setup above, if user ever need to reconnect to their project, user can simply use these commands below
+After initial setup above, if user ever needs to push an update to their project, user can simply use these commands below:
 
 * ``git commit -am "commit comment"``
 * ``git push origin master``
+
+*************************************
+Connect to Database and Create Admin
+*************************************
+
+We should still be in our project root directory (where our manage.py file is located). We need to execute the following commands to connect to our DB and establish
+Super User.
+
+* ``./manage.py migrate``
+* ``./manage.py createsuperuser``
