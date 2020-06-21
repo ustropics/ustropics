@@ -7,7 +7,9 @@ Below are critical steps towards setting up and initializing the USTropics frame
 * Python_
 
 .. _Python: http://www.python.org/
-* Ubuntu environment on Windows
+* Ubuntu Environment on Windows_
+
+.. _Ubuntu Environment on Windows: https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab
 
 ****************
 Initial Startup
