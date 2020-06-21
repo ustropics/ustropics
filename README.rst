@@ -37,10 +37,11 @@ Run Ubuntu.exe
   * ``pip install django``
   * ``django-admin startproject project_name``
 
-After intial setup above, if you ever need to reconnect to your project, you can simply use these commands below:
-  * ``cd /mnt/c/path/to/project``
-  * ``source env/bin/activate``
-  * ``./manage.py runserver``
+After intial setup above, if you ever need to reconnect to your project, you can simply use these commands below
+
+* ``cd /mnt/c/path/to/project``
+* ``source env/bin/activate``
+* ``./manage.py runserver``
 
 
 **********************************
