@@ -17,13 +17,13 @@ Initial Startup
 Initialize GIT and Upload Project
 **********************************
 
-.. Create GIT account/repository project::
+Create GIT account/repository project
 
 .. Run git.bash::
 * ``cd /path/to/project``
 * ``git init``
 
-.. add .gitignore file to /path/to/project::
+add .gitignore file to /path/to/project::
 
   bash
   *.pyc
@@ -35,7 +35,7 @@ Initialize GIT and Upload Project
   /static
   .DS_Store
 
-.. check git status and add files::
+check git status and add files
 
 * ``git status``
 * ``git add --all``
