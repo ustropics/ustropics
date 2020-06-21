@@ -37,7 +37,7 @@ Run Ubuntu.exe
   * ``pip install django``
   * ``django-admin startproject project_name``
 
-After intial setup above, if you ever need to reconnect to your project, you can simply use these commands below
+After intial setup above, if user ever need to reconnect to their project, user can simply use these commands below
 
 * ``cd /mnt/c/path/to/project``
 * ``source env/bin/activate``
@@ -68,6 +68,11 @@ add .gitignore file to /path/to/project::
 check git status and add files
   * ``git status``
   * ``git add --all``
-  * ``git remote add origin https://github.com/<YOUR_ACCOUNT_NAME>/<PROJECT_NAME>.git``
+  * ``git remote add origin https://github.com/<USER_ACCOUNT_NAME>/<PROJECT_NAME>.git``
   * ``git commit -am "first commit"``
   * ``git push -u origin master``
+
+After intial setup above, if you ever need to reconnect to update your project, you can simply use these commands below:
+
+* ``git commit -am "commit comment"``
+* ``git push origin master``
