@@ -24,8 +24,7 @@ Run git.bash
   * ``cd /path/to/project``
   * ``git init``
 
-add .gitignore file to /path/to/project::
-
+add .gitignore file to /path/to/project:
   bash
   *.pyc
   *~
@@ -37,9 +36,8 @@ add .gitignore file to /path/to/project::
   .DS_Store
 
 check git status and add files
-
-* ``git status``
-* ``git add --all``
-* ``git remote add origin https://github.com/drphillgood/ustropics.git``
-* ``git commit -am "first commit"``
-* ``git push -u origin master``
+  * ``git status``
+  * ``git add --all``
+  * ``git remote add origin https://github.com/drphillgood/ustropics.git``
+  * ``git commit -am "first commit"``
+  * ``git push -u origin master``
