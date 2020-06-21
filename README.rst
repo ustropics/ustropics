@@ -30,14 +30,14 @@ This will cover the initial construction of virtual environment (env), download 
 established a linux-based OS (this tutorial uses Ubuntu on Windows).
 
 
-Run Ubuntu.exe
+run Ubuntu.exe
   * ``cd /mnt/c/path/to/project``
   * ``virtualenv env``
   * ``source env/bin/activate``
   * ``pip install django``
   * ``django-admin startproject project_name``
 
-After intial setup above, if user ever need to reconnect to their project, user can simply use these commands below
+After initial setup above, if user ever need to reconnect to their project, user can simply use these commands below:
 
 * ``cd /mnt/c/path/to/project``
 * ``source env/bin/activate``
@@ -50,7 +50,7 @@ Initialize GIT and Upload Project
 
 It's good practice to connect Github to user projects. Below we will quickly outline these processes. See Github requirements above.
 
-Run git.bash
+run git.bash
   * ``cd /path/to/project``
   * ``git init``
 
@@ -65,14 +65,15 @@ add .gitignore file to /path/to/project::
   /static
   .DS_Store
 
-check git status and add files
-  * ``git status``
-  * ``git add --all``
-  * ``git remote add origin https://github.com/<USER_ACCOUNT_NAME>/<PROJECT_NAME>.git``
-  * ``git commit -am "first commit"``
-  * ``git push -u origin master``
+We fist should check git status (ensure we are reading files), initialize an origin connection, and push our first commit to origin branch:
 
-After intial setup above, if you ever need to reconnect to update your project, you can simply use these commands below:
+* ``git status``
+* ``git add --all``
+* ``git remote add origin https://github.com/<USER_ACCOUNT_NAME>/<PROJECT_NAME>.git``
+* ``git commit -am "first commit"``
+* ``git push -u origin master``
+
+After initial setup above, if user ever need to reconnect to their project, user can simply use these commands below
 
 * ``git commit -am "commit comment"``
 * ``git push origin master``
