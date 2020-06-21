@@ -23,21 +23,19 @@ Create GIT account/repository project
 * ``cd /path/to/project``
 * ``git init``
 
-* add .gitignore file to /path/to/project
-``
-*.pyc
+add .gitignore file to /path/to/project
+``*.pyc
 *~
 /.vscode
 __pycache__
 myvenv
 db.sqlite3
 /static
-.DS_Store
-``
+.DS_Store``
 
-**check git status and add files**
-git status
-git add --all
-git remote add origin https://github.com/drphillgood/ustropics.git
-git commit -am "first commit"
-git push -u origin master
+check git status and add files
+* ``git status``
+* ``git add --all``
+* ``git remote add origin https://github.com/drphillgood/ustropics.git``
+* ``git commit -am "first commit"``
+* ``git push -u origin master``
