@@ -4,9 +4,9 @@ Connecting to Project
 
 Below are critical steps towards setting up and initializing the USTropics framework. There are some initial requirements for running this framework:
 
-* Python_.
+* Python 3.7+_
 
-.. _Python: http://www.python.org/
+.. _Python 3.7+: http://www.python.org/
 * Ubuntu environment on Windows
 
 ****************
