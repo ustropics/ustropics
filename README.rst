@@ -24,8 +24,8 @@ Run git.bash
   * ``cd /path/to/project``
   * ``git init``
 
-add .gitignore file to /path/to/project:
-  bash
+add .gitignore file to /path/to/project::
+
   *.pyc
   *~
   /.vscode
