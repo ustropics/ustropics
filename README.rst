@@ -2,7 +2,10 @@
 Connecting to Project
 ######################
 
-Below are critical steps towards setting up and initializing the USTropics framework.
+Below are critical steps towards setting up and initializing the USTropics framework. There are some initial requirements for running this framework:
+
+* Python 3.7+
+* Ubuntu environment on Windows
 
 ****************
 Initial Startup
@@ -17,12 +20,9 @@ Initial Startup
 Initialize GIT and Upload Project
 **********************************
 
-Create GIT account/repository project
-
 Run git.bash
-
-* ``cd /path/to/project``
-* ``git init``
+  * ``cd /path/to/project``
+  * ``git init``
 
 add .gitignore file to /path/to/project::
 
