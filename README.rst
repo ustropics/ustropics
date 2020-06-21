@@ -23,18 +23,17 @@ Create GIT account/repository project
 * ``cd /path/to/project``
 * ``git init``
 
-add .gitignore file to /path/to/project
+add .gitignore file to /path/to/project::
 
-``` bash
-*.pyc
-*~
-/.vscode
-__pycache__
-myvenv
-db.sqlite3
-/static
-.DS_Store
-```
+  bash
+  *.pyc
+  *~
+  /.vscode
+  __pycache__
+  myvenv
+  db.sqlite3
+  /static
+  .DS_Store
 
 check git status and add files
 * ``git status``
