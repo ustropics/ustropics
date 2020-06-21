@@ -13,6 +13,12 @@ Below are critical steps towards setting up and initializing the USTropics frame
 
 __Ubuntu_
 
+Python_ is `my favourite
+programming language`__.
+
+.. _Python: http://www.python.org/
+
+__ Python_
 ****************
 Initial Startup
 ****************
