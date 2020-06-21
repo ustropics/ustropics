@@ -9,9 +9,9 @@ Initial Startup
 ****************
 
 .. Run Ubuntu.exe::
-* ``cd /mnt/c/Apache24/htdocs/website``
-* ``source env/bin/activate``
-* ``./manage.py runserver``
+``cd /mnt/c/Apache24/htdocs/website``
+``source env/bin/activate``
+``./manage.py runserver``
 
 **********************************
 Initialize GIT and Upload Project
@@ -20,8 +20,8 @@ Initialize GIT and Upload Project
 Create GIT account/repository project
 
 .. Run git.bash::
-* ``cd /path/to/project``
-* ``git init``
+``cd /path/to/project``
+``git init``
 
 add .gitignore file to /path/to/project::
 
@@ -37,8 +37,8 @@ add .gitignore file to /path/to/project::
 
 check git status and add files
 
-* ``git status``
-* ``git add --all``
-* ``git remote add origin https://github.com/drphillgood/ustropics.git``
-* ``git commit -am "first commit"``
-* ``git push -u origin master``
+``git status``
+``git add --all``
+``git remote add origin https://github.com/drphillgood/ustropics.git``
+``git commit -am "first commit"``
+``git push -u origin master``
