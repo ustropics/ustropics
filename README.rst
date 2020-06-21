@@ -7,9 +7,8 @@ Below are critical steps towards setting up and initializing the USTropics frame
 * `Python 3.7+
   <http://docs.django-cms.org/en/latest/#software-version-requirements-and-release-notes>`_
 
-.. _Python: http://www.python.org/
-* Ubuntu_ `Environment on Windows`__.
- https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab
+* `Ubuntu Environment on Windows
+  <https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab>`_
 
 ****************
 Initial Startup
