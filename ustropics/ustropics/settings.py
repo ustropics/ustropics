@@ -141,7 +141,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'ustropics'
-EMAIL_HOST_PASSWORD = '3dreliant'
+EMAIL_HOST_PASSWORD = ''
 
 BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a', 'img']
 BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'style', 'src', 'width', 'height', 'alt']
