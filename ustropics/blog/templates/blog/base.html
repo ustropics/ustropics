@@ -1,0 +1,208 @@
+{% load static %}
+{% load inbox %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/topbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tropical_outlook.css' %}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+</head>
+<body onload="openNav()">
+<div id="mySidenav" class="sidenav">
+  <div class="logo_wrapper"><img src="/media/logo/logo-vector.png" class="logo_vector"/><p class="logo_font">USTropics</p>
+  </div>
+  <div class="close_button"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+  </div>
+  {% if user.is_authenticated %}
+  <div class="sidebar_profile_wrapper">
+    <div class="sidebar_profile_picture">
+      <div class="sidebar_img_wrapper">
+        <img class="sidebar_profile_img" src="{{ request.user.profile.image.url }}" />
+        <div class="sidebar_img_background_wrapper">
+          <span class="sidebar_img_background"></span>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar_profile_name">
+      <p class="sidebar_welcome_message">Welcome,</p>
+      <p class="sidebar_username">{{request.user.username}}</p>
+    </div>
+  </div>
+  {% else %}
+  <div class="sidebar_not_loggedin_wrapper">
+    <p class="sidebar_not_loggedin">Please <a class="nav-item nav-link" href="{% url 'login' %}">Login</a> or <a class="nav-item nav-link" href="{% url 'register' %}">Register</a> an Account</p>
+  </div>
+  {% endif %}
+  <a class="home_wrapper_link" href="{% url 'blog-home' %}">
+  <div class="sidebar_home_wrapper">
+    <div class="sidebar_home_icon">
+       <span class="home_icon"><i class="material-icons">home</i></span>
+       <p class="sidebar_home_text">Home</p>
+    </div>
+    <div class="sidebar_home_arrow">
+      <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+    </div>
+  </div>
+</a>
+<a class="recentpost_wrapper_link" href="">
+<div class="sidebar_recentpost_wrapper">
+  <div class="sidebar_recentpost_icon">
+     <span class="recentpost_icon"><i class="material-icons">edit</i></span>
+     <p class="sidebar_recentpost_text">Recent Posts</p>
+  </div>
+  <div class="sidebar_recentpost_arrow">
+    <span class="recentpost_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+  </div>
+</div>
+</a>
+<a class="product_wrapper_link" href="">
+<div class="sidebar_product_wrapper">
+  <div class="sidebar_product_icon">
+     <span class="product_icon"><i class="material-icons">collections</i></span>
+     <p class="sidebar_product_text">Products</p>
+  </div>
+  <div class="sidebar_product_arrow">
+    <span class="product_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+  </div>
+</div>
+</a>
+{% if user.is_authenticated %}
+<div class="sidebar_spacer"></div>
+<div class="tropical_outlook_wrapper">
+  <div class="tropical_outlook_menu_wrapper">
+    <div class="tropical_outlook_cpac"><p class="cpac_text">Central Pacific</p></div>
+    <div class="tropical_outlook_epac"><p class="epac_text">Eastern Pacific</p></div>
+    <div class="tropical_outlook_atl"><p class="atl_text">Atlantic</p></div>
+  </div>
+  <div class="tropical_map_atl_wrapper">
+      <img src="https://www.nhc.noaa.gov/xgtwo/two_atl_0d0.png" width="240px" height="220px" />
+  </div>
+</div>
+<a class="weathermap_wrapper_link" href="">
+<div class="sidebar_weathermap_wrapper">
+  <div class="sidebar_weathermap_icon">
+     <span class="weathermap_icon"><i class="material-icons">public</i></span>
+     <p class="sidebar_weathermap_text">Weather Map</p>
+  </div>
+  <div class="sidebar_weathermap_arrow">
+    <span class="weathermap_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+  </div>
+</div>
+</a>
+<a class="dataanalysis_wrapper_link" href="">
+<div class="sidebar_dataanalysis_wrapper">
+  <div class="sidebar_dataanalysis_icon">
+     <span class="dataanalysis_icon"><i class="material-icons">equalizer</i></span>
+     <p class="sidebar_dataanalysis_text">Data Analysis</p>
+  </div>
+  <div class="sidebar_dataanalysis_arrow">
+    <span class="dataanalysis_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+  </div>
+</div>
+</a>
+<a class="library_wrapper_link" href="">
+<div class="sidebar_library_wrapper">
+  <div class="sidebar_library_icon">
+     <span class="library_icon"><i class="material-icons">school</i></span>
+     <p class="sidebar_library_text">USTropics Library</p>
+  </div>
+  <div class="sidebar_library_arrow">
+    <span class="library_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+  </div>
+</div>
+</a>
+<div class="sidebar_bottom_menu">
+  <div class="sidebar_notifications_wrapper">
+    <span class="notification_icon"><i class="material-icons">notification_important</i></span>
+  </div>
+  <div class="sidebar_contactus_wrapper">
+    <span class="contactus_icon"><i class="material-icons">chat</i></span>
+  </div>
+  <div class="sidebar_settings_wrapper">
+    <span class="settings_icon"><i class="material-icons">construction</i></span>
+  </div>
+  <div class="sidebar_logout_wrapper">
+    <span class="notification_icon"><i class="material-icons">power_off</i></span>
+  </div>
+</div>
+{% endif %}
+</div>
+
+
+
+<div id="main">
+  <div class="top_bar">
+    <div class="top_bar_left"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    </div>
+      <div class="top_bar_right">
+        <div class="navbar">
+<!--          <a href="#home">Home</a> !-->
+<!--           <a href="#news">News</a> !-->
+          {% if user.is_authenticated %}
+          <div class="dropdown">
+            <button class="dropbtn">
+              <a class="topbar_inbox_link" href="{% url 'messages_inbox' %}" >
+                {% inbox_count as inbox_var %}
+                {% if inbox_var == 0 %}
+                {% else %}
+                <div class="top_mailbox_wrapper">
+                <div class="inbox_count_value">
+                </div>
+                  {% inbox_count %}
+                </div>
+                {% endif %}
+              <div class="mail_icon_wrapper">
+                <div class="mail_icon_img">
+                  &#9993;
+                </div>
+              </div>
+            </a>
+                  <div class="profile_name_wrapper">
+                    <div class="top_profile_wrapper">
+                      <img class="top_profile_img" src="{{ request.user.profile.image.url }}" />
+                    </div>
+                      <p class="profile_name">{{request.user.username}}</p>
+                  </div>
+                    <div class="top_arrow_wrapper"><i class="arrow down"></i>
+                    </div>
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'profile' %}">Your Profile</a>
+              <a href="{% url 'messages_inbox' %}">Inbox</a>
+              <a href="{% url 'logout' %}">Logout</a>
+              {% if user.is_superuser %}
+              <hr class="admin_line_break"></hr>
+              <a href="{% url 'post-create' %}">New Post</a>
+              <a href="{% url 'admin:index' %}">Admin CP</a>
+              {% endif %}
+            </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <br /><br />
+  {% block content %}{% endblock %}
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+</body>
+</html>

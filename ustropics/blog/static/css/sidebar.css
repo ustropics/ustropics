@@ -1,0 +1,622 @@
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #2a3f54;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 14px;
+  overflow: auto;
+}
+
+.sidenav a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidenav a:hover {
+  color: #1abb9c;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  padding-top: 6px;
+  top: 0;
+  right: 10px;
+  font-size: 34px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.sidebar_profile_wrapper {
+  height: 110px;
+  position: relative;
+  bottom: 10px;
+  background-image: linear-gradient(#1b2f44, #2a3f54, #1b2f44);
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-image: linear-gradient(to right, #2a3f54, #405468, #2a3f54) 1 stretch;
+}
+
+.sidebar_profile_picture {
+  width: 40%;
+  height: 100%;
+  float: left;
+  display: inline;
+}
+
+.sidebar_img_wrapper {
+  padding-left: 22px;
+  padding-top: 18px;
+}
+
+.sidebar_profile_img {
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  z-index: 10;
+}
+
+.sidebar_img_background_wrapper {
+
+}
+
+.sidebar_img_background {
+  height: 90px;
+  width: 90px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top: -87px;
+  right: 7.52px;
+  z-index: 4;
+}
+
+.sidebar_profile_name {
+  width: 60%;
+  height: 100%;
+  float: right;
+  display: inline;
+  padding-top: 20px;
+  font-family: 'Dosis';
+}
+
+.sidebar_welcome_message {
+  color: #a4b3a0;
+  padding-left: 30px;
+  size: 16px;
+  font-family: 'Dosis';
+}
+
+.sidebar_username {
+  color: white;
+  padding-left: 50px;
+  position: relative;
+  size: 16px;
+  top: -10px;
+  font-family: 'Dosis';
+}
+
+.logo_wrapper {
+  position: relative;
+  top: -12px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.logo_font {
+  color: white;
+  display: inline;
+  position: relative;
+  font-size: 25px;
+  font-family: 'Dosis';
+  bottom: 12px;
+  padding-left: 14px;
+}
+
+.logo_vector{
+  height: 18.5%;
+  width: 18.5%;
+}
+
+.sidebar_not_loggedin_wrapper {
+  position: relative;
+  height: 50px;
+  margin-bottom: 0px;
+  top: -10px;
+  background-image: linear-gradient(#1b2f44, #2a3f54, #1b2f44);
+}
+
+.sidebar_not_loggedin {
+  color: white;
+  padding-left: 16px;
+  padding-top: 12px;
+  size: 14px;
+  color: #a4b3a0;
+  font-family: 'Dosis';
+}
+
+.home_wrapper_link {
+  position: relative;
+  top: -10px;
+  font-family: 'Dosis';
+}
+
+.sidebar_home_wrapper {
+  width: 100%;
+  height: 50px;
+  background-color: #2a3f54;
+  padding-top: 10px;
+  padding-left: 5px;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-image: linear-gradient(to right, #2a3f54, #405468, #2a3f54) 1 stretch;
+}
+
+.sidebar_home_wrapper:hover {
+  background-image: linear-gradient(#dddddd, #dddddd, #dddddd);
+}
+
+.sidebar_home_wrapper:hover .sidebar_home_text {
+  color: black;
+}
+
+.sidebar_home_wrapper:hover .home_icon {
+  color: black;
+}
+
+.sidebar_home_wrapper:hover .home_arrow {
+  color: black;
+}
+
+.sidebar_home_icon {
+  display: block;
+}
+
+.sidebar_home_text {
+  display: inline;
+  position: relative;
+  color: white;
+  font-size: 16px;
+  padding-left: 15px;
+  bottom: 4px;
+}
+
+.home_icon {
+  color: white;
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+.sidebar_home_arrow {
+  display:inline;
+  position: relative;
+  float: right;
+  bottom: 27px;
+  padding-right: 20px;
+}
+
+.home_arrow {
+color: white;
+}
+
+.product_wrapper_link {
+  position: relative;
+  bottom: 10px;
+  font-family: 'Dosis';
+}
+
+.sidebar_product_wrapper {
+  width: 100%;
+  height: 50px;
+  background-color: #2a3f54;
+  padding-top: 10px;
+  padding-left: 5px;
+  border-bottom: 2px solid red;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-image: linear-gradient(to right, #2a3f54, #405468, #2a3f54) 1 stretch;
+}
+
+.sidebar_product_wrapper:hover {
+  background-image: linear-gradient(#dddddd, #dddddd, #dddddd);
+}
+
+.sidebar_product_wrapper:hover .sidebar_product_text {
+  color: black;
+}
+
+.sidebar_product_wrapper:hover .product_icon {
+  color: black;
+}
+
+.sidebar_product_wrapper:hover .product_arrow {
+  color: black;
+}
+
+.sidebar_product_icon {
+  display: block;
+}
+
+.sidebar_product_text {
+  display: inline;
+  position: relative;
+  color: white;
+  font-size: 16px;
+  padding-left: 15px;
+  bottom: 4px;
+}
+
+.product_icon {
+  color: white;
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+.sidebar_product_arrow {
+  display:inline;
+  position: relative;
+  float: right;
+  bottom: 27px;
+  padding-right: 20px;
+}
+
+.product_arrow {
+color: white;
+}
+
+.recentpost_wrapper_link {
+position: relative;
+bottom: 10px;
+font-family: 'Dosis';
+}
+
+.sidebar_recentpost_wrapper {
+  width: 100%;
+  height: 50px;
+  background-color: #2a3f54;
+  padding-left: 5px;
+  padding-top: 10px;
+  border-bottom: 2px solid red;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-image: linear-gradient(to right, #2a3f54, #405468, #2a3f54) 1 stretch;
+}
+
+.sidebar_recentpost_wrapper:hover {
+  background-image: linear-gradient(#dddddd, #dddddd, #dddddd);
+}
+
+.sidebar_recentpost_wrapper:hover .sidebar_recentpost_text {
+  color: black;
+}
+
+.sidebar_recentpost_wrapper:hover .recentpost_icon {
+  color: black;
+}
+
+.sidebar_recentpost_wrapper:hover .recentpost_arrow {
+  color: black;
+}
+
+.sidebar_recentpost_icon {
+  display: block;
+}
+
+.sidebar_recentpost_text {
+  display: inline;
+  position: relative;
+  color: white;
+  font-size: 16px;
+  padding-left: 15px;
+  bottom: 4px;
+}
+
+.recentpost_icon {
+  color: white;
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+.sidebar_recentpost_arrow {
+  display:inline;
+  position: relative;
+  float: right;
+  bottom: 27px;
+  padding-right: 20px;
+}
+
+.recentpost_arrow {
+color: white;
+}
+
+.weathermap_wrapper_link {
+position: relative;
+bottom: 10px;
+font-family: 'Dosis';
+}
+
+.sidebar_weathermap_wrapper {
+  width: 100%;
+  height: 50px;
+  background-color: #2a3f54;
+  padding-left: 5px;
+  padding-top: 10px;
+  border-top: 4px solid red;
+  border-bottom: 2px solid red;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-image: linear-gradient(to right, #2a3f54, #405468, #2a3f54) 1 stretch;
+}
+
+.sidebar_weathermap_wrapper:hover {
+  background-image: linear-gradient(#dddddd, #dddddd, #dddddd);
+}
+
+.sidebar_weathermap_wrapper:hover .sidebar_weathermap_text {
+  color: black;
+}
+
+.sidebar_weathermap_wrapper:hover .weathermap_icon {
+  color: black;
+}
+
+.sidebar_weathermap_wrapper:hover .weathermap_arrow {
+  color: black;
+}
+
+.sidebar_weathermap_icon {
+  display: block;
+  padding-top: 6px;
+}
+
+.sidebar_weathermap_text {
+  display: inline;
+  position: relative;
+  color: white;
+  font-size: 16px;
+  padding-left: 15px;
+  bottom: 4px;
+}
+
+.weathermap_icon {
+  color: white;
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+.sidebar_weathermap_arrow {
+  display:inline;
+  position: relative;
+  float: right;
+  bottom: 27px;
+  padding-right: 20px;
+}
+
+.weathermap_arrow {
+  color: white;
+}
+
+.dataanalysis_wrapper_link {
+  position: relative;
+  bottom: 10px;
+  font-family: 'Dosis';
+}
+
+.sidebar_dataanalysis_wrapper {
+  width: 100%;
+  height: 50px;
+  background-color: #2a3f54;
+  padding-left: 5px;
+  padding-top: 10px;
+  border-bottom: 2px solid red;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-image: linear-gradient(to right, #2a3f54, #405468, #2a3f54) 1 stretch;
+}
+
+.sidebar_dataanalysis_wrapper:hover {
+  background-image: linear-gradient(#dddddd, #dddddd, #dddddd);
+}
+
+.sidebar_dataanalysis_wrapper:hover .sidebar_dataanalysis_text {
+  color: black;
+}
+
+.sidebar_dataanalysis_wrapper:hover .dataanalysis_icon {
+  color: black;
+}
+
+.sidebar_dataanalysis_wrapper:hover .dataanalysis_arrow {
+  color: black;
+}
+
+.sidebar_dataanalysis_icon {
+  display: block;
+  padding-top: 6px;
+}
+
+.sidebar_dataanalysis_text {
+  display: inline;
+  position: relative;
+  color: white;
+  font-size: 16px;
+  padding-left: 15px;
+  bottom: 4px;
+}
+
+.dataanalysis_icon {
+  color: white;
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+.sidebar_dataanalysis_arrow {
+  display:inline;
+  position: relative;
+  float: right;
+  bottom: 27px;
+  padding-right: 20px;
+}
+
+.dataanalysis_arrow {
+color: white;
+}
+
+.library_wrapper_link {
+  position: relative;
+  bottom: 10px;
+  font-family: 'Dosis';
+}
+
+.sidebar_library_wrapper {
+  width: 100%;
+  height: 50px;
+  background-color: #2a3f54;
+  padding-left: 5px;
+  padding-top: 10px;
+  border-bottom: 2px solid red;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-image: linear-gradient(to right, #2a3f54, #405468, #2a3f54) 1 stretch;
+}
+
+.sidebar_library_wrapper:hover {
+  background-image: linear-gradient(#dddddd, #dddddd, #dddddd);
+}
+
+.sidebar_library_wrapper:hover .sidebar_library_text {
+  color: black;
+}
+
+.sidebar_library_wrapper:hover .library_icon {
+  color: black;
+}
+
+.sidebar_library_wrapper:hover .library_arrow {
+  color: black;
+}
+
+.sidebar_library_icon {
+  display: block;
+  padding-top: 6px;
+}
+
+.sidebar_library_text {
+  display: inline;
+  position: relative;
+  color: white;
+  font-size: 16px;
+  padding-left: 15px;
+  bottom: 4px;
+}
+
+.library_icon {
+  color: white;
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+.sidebar_library_arrow {
+  display:inline;
+  position: relative;
+  float: right;
+  bottom: 27px;
+  padding-right: 20px;
+}
+
+.library_arrow {
+color: white;
+}
+
+.sidebar_bottom_menu {
+  width: 250px;
+  height: 45px;
+  position: absolute;
+  float: bottom;
+  bottom: 0;
+  left: 0;
+  background-color: #172d44;
+}
+
+.sidebar_notifications_wrapper {
+  width: 25%;
+  height: 100%;
+  position: relative;
+  display: inline;
+  float: left;
+  text-align: center;
+}
+
+.sidebar_contactus_wrapper {
+  width: 25%;
+  height: 100%;
+  position: relative;
+  display: inline;
+  float: left;
+  text-align: center;
+}
+
+.sidebar_settings_wrapper {
+  width: 25%;
+  height: 100%;
+  position: relative;
+  display: inline;
+  float: left;
+  text-align: center;
+}
+
+.sidebar_logout_wrapper {
+  width: 25%;
+  height: 100%;
+  display: inline;
+  position: relative;
+  float: left;
+  text-align: center;
+}
+
+.notification_icon {
+  position: relative;
+  color: #5a738e;
+  top: 10px;
+  font-size: 25px;
+}
+
+.contactus_icon {
+  position: relative;
+  color: #5a738e;
+  top: 10px;
+  font-size: 25px;
+}
+
+.settings_icon {
+  position: relative;
+  color: #5a738e;
+  top: 10px;
+  font-size: 25px;
+}
+
+.logout_icon {
+  position: relative;
+  color: #5a738e;
+  top: 10px;
+  font-size: 25px;
+}

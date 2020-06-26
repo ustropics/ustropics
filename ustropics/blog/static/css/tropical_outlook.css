@@ -1,0 +1,87 @@
+.sidebar_spacer {
+  width: 100%;
+  height: 12px;
+  background-image: linear-gradient(#1b2f44, #2a3f54, #1b2f44);
+  bottom: 10px;
+  position: relative;
+  float: top;
+}
+
+.tropical_outlook_wrapper {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  bottom: 10px;
+  background-image: linear-gradient(#1b2f44, #2a3f54, #1b2f44);
+}
+
+.tropical_outlook_menu_wrapper {
+  width: 100%;
+  height: 30px;
+}
+
+.tropical_outlook_cpac {
+  position: relative;
+  float: left;
+  display: inline;
+  height: 100%;
+  width: 32.5%;
+  background-color: #2a3f54;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #4e5154;
+
+}
+
+.tropical_outlook_epac {
+  position: relative;
+  display: inline;
+  float: left;
+  height: 100%;
+  width: 32.5%;
+  background-color: #2a3f54;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #4e5154
+}
+
+.tropical_outlook_atl {
+  position: relative;
+  display: inline;
+  float: left;
+  height: 100%;
+  width: 32.5%;
+  background-color: #dddddd;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #9ca4ac;
+}
+
+.epac_text {
+  position: relative;
+  font-size: 12px;
+  bottom: 3px;
+  color: white;
+  }
+
+.cpac_text {
+  position: relative;
+  font-size: 12px;
+  bottom: 3px;
+  color: white;
+  }
+
+.atl_text {
+  position: relative;
+  font-size: 12px;
+  bottom: 3px;
+  color: black;
+}
+
+.tropical_map_atl_wrapper {
+  padding-top: 10px;
+  padding-left: 5px;
+}

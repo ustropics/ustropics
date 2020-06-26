@@ -1,0 +1,176 @@
+.top_bar {
+  height: 60px;
+  background-color: #ededed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  border-bottom: 1px solid #d9dee4;
+}
+
+.top_bar_right {
+  height: 60px;
+  position: fixed;
+  top: 2px;
+  right: 0;
+  width: 600px;
+  z-index: 0;
+}
+
+.top_profile_img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.top_profile_wrapper {
+  display: inline;
+  position: relative;
+  top: 2px;
+}
+
+.top_arrow_wrapper {
+  position: relative;
+  display: inline;
+  bottom: 23px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 1.2px 1.2px 0;
+  display: inline-block;
+  padding: 2.5px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.profile_name_wrapper {
+  display: inline;
+  position: relative;
+  top: -8px;
+  padding-left: 20px;
+}
+
+.profile_name {
+  bottom: 10px;
+  padding-left: 10px;
+  padding-right: 1px;
+  display: inline;
+  position: relative;
+}
+
+.navbar {
+  overflow: hidden;
+}
+
+.navbar a {
+  float: right;
+  font-size: 14px;
+  color: #2a3f54;
+  text-align: center;
+  padding-right: 30px;
+  padding-top: 10px;
+  text-decoration: none;
+  font-family: 'Dosis';
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #2a3f54;
+  padding-right: 22px;
+  padding-top: 14px;
+  padding-left: 36px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-family: 'Dosis';
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 184px;
+  box-shadow: 0px 9px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: #2a3f54;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.top_mailbox_wrapper {
+  width: 18px;
+  height: 18px;
+  float: left;
+  background-color: #1abb9c;
+  border-radius: 50%;
+  position: relative;
+  right: 8px;
+  color: white;
+  z-index: 2;
+}
+
+.top_bar_signin_wrapper {
+  position: relative;
+}
+
+.mail_icon_wrapper {
+  position: fixed;
+  z-index: 0;
+}
+
+.mail_icon_img {
+  font-size: 26px;
+}
+
+.inbox_count_value {
+  font-size: 12px;
+  padding-top: 2px;
+}
+
+.topbar_inbox_link {
+  display: block;
+  float: left;
+  position: absolute;
+  right: 116px;
+  top: 2px;
+}
+
+.topbar_inbox_link a:hover {
+  background-color: green;
+}
+
+.admin_line_break {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
