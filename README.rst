@@ -33,6 +33,12 @@ Initial Startup
 This will cover the initial construction of virtual environment (env), download django framework, and create new_project directory files. Users will have already needed to
 established a linux-based OS (this tutorial uses Ubuntu on Windows).
 
+Pip INSTALLED_APPS
+  * ``pip install django-crispy-forms``
+  * ``pip install django-ckeditor``
+  * ``pip install django-bleach``
+  * ``pip install django-taggit``
+  * ``pip install Pillow``
 
 run Ubuntu.exe
   * ``cd /mnt/c/path/to/project``
