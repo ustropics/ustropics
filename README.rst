@@ -22,6 +22,10 @@ Below are critical steps towards setting up and initializing the USTropics frame
 * `Github Account
   <https://github.com/>`_
 
+* Pillow
+
+* Scripts
+
 ****************
 Initial Startup
 ****************
@@ -37,6 +41,12 @@ run Ubuntu.exe
   * ``pip install django``
   * ``django-admin startproject project_name``
   * ``cd project_name``
+
+  Now we need to execute the following commands to connect to our DB and establish
+  Super User.
+
+  * ``./manage.py migrate``
+  * ``./manage.py createsuperuser``
 
 After initial setup above, if user ever need to reconnect to their project, user can simply use these commands below:
 
@@ -80,12 +90,12 @@ After initial setup above, if user ever needs to push an update to their project
 * ``git commit -am "commit comment"``
 * ``git push origin master``
 
-*************************************
-Connect to Database and Create Admin
-*************************************
+*************************
+Creating our First Module
+*************************
 
-We should still be in our project root directory (where our manage.py file is located). We need to execute the following commands to connect to our DB and establish
-Super User.
+Django uses a modular structure, where modules are labeled as ``apps``. Apps can be intricately connected through a project. Below we will create
+a blog app for our project to track posts. Ensure we are still in the root directory for our project (where the manage.py file is located)
 
-* ``./manage.py migrate``
+* ``./manage.py startapp blog``
 * ``./manage.py createsuperuser``

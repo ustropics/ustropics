@@ -37,6 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog.apps.BlogConfig',
+    'users.apps.UsersConfig',
+    'crispy_forms',
+    'django_messages',
+    'django.contrib.sites',
+    'django_bleach',
+    'ckeditor',
+    'ckeditor_uploader',
+    'taggit',
+    'notify',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +128,35 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+SITE_ID = 1
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_URL = 'login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'ustropics'
+EMAIL_HOST_PASSWORD = '3dreliant'
+
+BLEACH_ALLOWED_TAGS = ['p', 'b', 'i', 'u', 'em', 'strong', 'a', 'img']
+BLEACH_ALLOWED_ATTRIBUTES = ['href', 'title', 'style', 'src', 'width', 'height', 'alt']
+BLEACH_DEFAULT_WIDGET = 'wysiwyg.widgets.WysiwygWidget'
+BLEACH_STRIP_TAGS = True
+
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}
+
+STATIC_ROOT = '/stat'
