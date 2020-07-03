@@ -7,7 +7,7 @@ body {
   background-color: white;
   border-radius: 5px;
   border: 1px solid #d9dee4;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
   margin-left: 5%;
   margin-top: 10px;
 }
@@ -115,10 +115,11 @@ body {
   padding-right: 14px;
 }
 
-.test_div {
+.twitter_div {
   height: 100%;
   width: 20%;
   border-radius: 5px;
+  background: white;
   float: right;
   position: absolute;
   top: 72px;
@@ -126,8 +127,10 @@ body {
   z-index: 0;
   overflow: hidden;
   border: 1px solid #d9dee4;
+  padding-top: 8px;
 }
 
 .article_content {
   font-family: 'Dosis';
+  font-size: 12px;
 }
