@@ -15,123 +15,77 @@
 </head>
 <body onload="openNav()">
 <div id="mySidenav" class="sidenav">
-  <div class="logo_wrapper"><img src="/media/logo/logo-vector.png" class="logo_vector"/><p class="logo_font">USTropics</p>
-  </div>
-  <div class="close_button"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
-  </div>
-  {% if user.is_authenticated %}
-  <div class="sidebar_profile_wrapper">
-    <div class="sidebar_profile_picture">
-      <div class="sidebar_img_wrapper">
-        <img class="sidebar_profile_img" src="{{ request.user.profile.image.url }}" />
-        <div class="sidebar_img_background_wrapper">
-          <span class="sidebar_img_background"></span>
-        </div>
+  <div class="sidebar_wrapper">
+    <div class="sidebar_logo_wrapper">
+      <div class="sidebar_logo_container">
+        <img src="/media/logo/logo-vector.png" id="logo_vector" />
+      </div>
+      <div class="sidebar_logotxt_container">
+        USTropics
+      </div>
+      <div class="sidebar_close_container">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="sidebar_close_button">☰</span></a>
       </div>
     </div>
-    <div class="sidebar_profile_name">
-      <p class="sidebar_welcome_message">Welcome,</p>
-      <p class="sidebar_username">{{request.user.username}}</p>
+    <div class="sidebar_profile_wrapper">
+      {% if user.is_authenticated %}
+        <img class="sidebar_profile_img" src="{{ request.user.profile.image.url }}" />
+        <p class="sidebar_welcome_message">Welcome,
+          <span id="sidebar_username_txt">{{request.user.username}}</span>
+        </p>
+      {% else %}
+      <p class="sidebar_not_loggedin">Please <a class="sidebar_active_link" href="{% url 'login' %}">Login</a> or
+      <a class="sidebar_active_link" href="{% url 'register' %}">Register</a> an Account</p>
+      {% endif %}
     </div>
-  </div>
-  {% else %}
-  <div class="sidebar_not_loggedin_wrapper">
-    <p class="sidebar_not_loggedin">Please <a class="nav-item nav-link" href="{% url 'login' %}">Login</a> or <a class="nav-item nav-link" href="{% url 'register' %}">Register</a> an Account</p>
-  </div>
-  {% endif %}
-  <a class="home_wrapper_link" href="{% url 'blog-home' %}">
-  <div class="sidebar_home_wrapper">
-    <div class="sidebar_home_icon">
-       <span class="home_icon"><i class="material-icons">home</i></span>
-       <p class="sidebar_home_text">Home</p>
-    </div>
-    <div class="sidebar_home_arrow">
+    <a class="nonactive_link" href="{% url 'blog-home' %}">
+    <div class="sidebar_button" id="sidebar_button1">
+      <i class="material-icons">home</i><p class="sidebar_button_txt">Home</p>
+      <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+    </div></a>
+    <div class="sidebar_button" id="sidebar_button2">
+      <i class="material-icons">edit</i><p class="sidebar_button_txt">Recent Posts</p>
       <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
     </div>
+    <div class="sidebar_button" id="sidebar_button3" onclick="toggle_visibility('button1_container');changeClass();">
+      <i class="material-icons">collections</i><p class="sidebar_button_txt">Products</p>
+      <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+    </div>
+    <div class="sidebar_button_container" id="button1_container">
+    </div>
+    <div class="sidebar_content_wrapper" id="sidebar_content_wrapper">
+    </div>
+    <div class="sidebar_button" id="sidebar_button4">
+      <i class="material-icons">public</i><p class="sidebar_button_txt">Weather Map</p>
+      <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+    </div>
+    <div class="sidebar_button" id="sidebar_button5">
+      <i class="material-icons">equalizer</i><p class="sidebar_button_txt">Data Analysis</p>
+      <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+    </div>
+    <div class="sidebar_button" id="sidebar_button6">
+      <i class="material-icons">school</i><p class="sidebar_button_txt">USTropics Library</p>
+      <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+    </div>
+    <div class="sidebar_button" id="sidebar_button7">
+      <i class="material-icons">bookmarks</i><p class="sidebar_button_txt">Links List</p>
+      <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+    </div>
+    <div class="sidebar_menu_wrapper">
+      <div class="menu_wrapper_buttons" id="sidebar_notifications_wrapper">
+      <span class="notification_icon"><i class="material-icons md-18">notification_important</i></span>
+      </div>
+      <div class="menu_wrapper_buttons" id="sidebar_contactus_wrapper">
+      <span class="contactus_icon"><i class="material-icons md-18">chat</i></span>
+      </div>
+      <div class="menu_wrapper_buttons" id="sidebar_settings_wrapper">
+      <span class="settings_icon"><i class="material-icons md-18">construction</i></span>
+      </div>
+      <div class="menu_wrapper_buttons" id="sidebar_logout_wrapper">
+      <span class="notification_icon"><i class="material-icons md-18">power_off</i></span>
+      </div>
+    </div>
   </div>
-</a>
-<a class="recentpost_wrapper_link" href="">
-<div class="sidebar_recentpost_wrapper">
-  <div class="sidebar_recentpost_icon">
-     <span class="recentpost_icon"><i class="material-icons">edit</i></span>
-     <p class="sidebar_recentpost_text">Recent Posts</p>
-  </div>
-  <div class="sidebar_recentpost_arrow">
-    <span class="recentpost_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
-  </div>
-</div>
-</a>
-<a class="product_wrapper_link" href="">
-<div class="sidebar_product_wrapper">
-  <div class="sidebar_product_icon">
-     <span class="product_icon"><i class="material-icons">collections</i></span>
-     <p class="sidebar_product_text">Products</p>
-  </div>
-  <div class="sidebar_product_arrow">
-    <span class="product_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
-  </div>
-</div>
-</a>
-{% if user.is_authenticated %}
-<div class="sidebar_spacer"></div>
-<div class="tropical_outlook_wrapper">
-  <div class="tropical_outlook_menu_wrapper">
-    <div class="tropical_outlook_cpac"><p class="cpac_text">Central Pacific</p></div>
-    <div class="tropical_outlook_epac"><p class="epac_text">Eastern Pacific</p></div>
-    <div class="tropical_outlook_atl"><p class="atl_text">Atlantic</p></div>
-  </div>
-  <div class="tropical_map_atl_wrapper">
-      <img src="https://www.nhc.noaa.gov/xgtwo/two_atl_0d0.png" width="240px" height="220px" />
-  </div>
-</div>
-<a class="weathermap_wrapper_link" href="">
-<div class="sidebar_weathermap_wrapper">
-  <div class="sidebar_weathermap_icon">
-     <span class="weathermap_icon"><i class="material-icons">public</i></span>
-     <p class="sidebar_weathermap_text">Weather Map</p>
-  </div>
-  <div class="sidebar_weathermap_arrow">
-    <span class="weathermap_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
-  </div>
-</div>
-</a>
-<a class="dataanalysis_wrapper_link" href="">
-<div class="sidebar_dataanalysis_wrapper">
-  <div class="sidebar_dataanalysis_icon">
-     <span class="dataanalysis_icon"><i class="material-icons">equalizer</i></span>
-     <p class="sidebar_dataanalysis_text">Data Analysis</p>
-  </div>
-  <div class="sidebar_dataanalysis_arrow">
-    <span class="dataanalysis_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
-  </div>
-</div>
-</a>
-<a class="library_wrapper_link" href="">
-<div class="sidebar_library_wrapper">
-  <div class="sidebar_library_icon">
-     <span class="library_icon"><i class="material-icons">school</i></span>
-     <p class="sidebar_library_text">USTropics Library</p>
-  </div>
-  <div class="sidebar_library_arrow">
-    <span class="library_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
-  </div>
-</div>
-</a>
-<div class="sidebar_bottom_menu">
-  <div class="sidebar_notifications_wrapper">
-    <span class="notification_icon"><i class="material-icons">notification_important</i></span>
-  </div>
-  <div class="sidebar_contactus_wrapper">
-    <span class="contactus_icon"><i class="material-icons">chat</i></span>
-  </div>
-  <div class="sidebar_settings_wrapper">
-    <span class="settings_icon"><i class="material-icons">construction</i></span>
-  </div>
-  <div class="sidebar_logout_wrapper">
-    <span class="notification_icon"><i class="material-icons">power_off</i></span>
-  </div>
-</div>
-{% endif %}
 </div>
 
 
@@ -188,21 +142,14 @@
       </div>
     </div>
   </div>
-  <br /><br />
+  <br /><br /><br />
   {% block content %}{% endblock %}
 </div>
 
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
+<div>
+  test
+</div>
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-</script>
-
+<script type="text/javascript" src="{% static 'jss/sidebar.js' %}"></script>
 </body>
 </html>

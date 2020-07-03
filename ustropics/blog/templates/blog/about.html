@@ -1,0 +1,174 @@
+{% load static %}
+{% load inbox %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css2/main.css' %}">
+<link rel="stylesheet" href="{% static 'css2/sidebar.css' %}">
+<link rel="stylesheet" href="{% static 'css2/topbar.css' %}">
+<link rel="stylesheet" href="{% static 'css2/media.css' %}">
+</head>
+<body onload="openNav()">
+  <div id="main_body_wrapper">
+    <div id="ustro_sidebar" class="sidebar">
+      <div class="sidebar_wrapper">
+        <div class="sidebar_logo_wrapper">
+          <div class="sidebar_logo_container">
+            <img src="/media/logo/logo-vector.png" id="logo_vector" />
+          </div>
+          <div class="sidebar_logotxt_container">
+            USTropics
+          </div>
+          <div class="sidebar_close_container">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="sidebar_close_button">☰</span></a>
+          </div>
+        </div>
+        <div class="sidebar_profile_wrapper">
+          {% if user.is_authenticated %}
+            <img class="sidebar_profile_img" src="{{ request.user.profile.image.url }}" />
+            <p class="sidebar_welcome_message">Welcome,
+              <span id="sidebar_username_txt">{{request.user.username}}</span>
+            </p>
+          {% else %}
+          <p class="sidebar_not_loggedin">Please <a class="sidebar_active_link" href="{% url 'login' %}">Login</a> or
+          <a class="sidebar_active_link" href="{% url 'register' %}">Register</a> an Account</p>
+          {% endif %}
+        </div>
+        <div class="sidebar_button" id="sidebar_button1" onclick="toggle_visibility('button1_container');changeClass();">
+          <i class="material-icons">home</i><p class="sidebar_button_txt">Home</p>
+          <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+        </div>
+        <div class="sidebar_button_container" id="button1_container">
+        </div>
+        <div class="sidebar_button" id="sidebar_button2">
+          <i class="material-icons">edit</i><p class="sidebar_button_txt">Recent Posts</p>
+          <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+        </div>
+        <div class="sidebar_button" id="sidebar_button3">
+          <i class="material-icons">collections</i><p class="sidebar_button_txt">Products</p>
+          <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+        </div>
+        <div class="sidebar_content_wrapper" id="sidebar_content_wrapper">
+        </div>
+        <div class="sidebar_button" id="sidebar_button4">
+          <i class="material-icons">public</i><p class="sidebar_button_txt">Weather Map</p>
+          <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+        </div>
+        <div class="sidebar_button" id="sidebar_button5">
+          <i class="material-icons">equalizer</i><p class="sidebar_button_txt">Data Analysis</p>
+          <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+        </div>
+        <div class="sidebar_button" id="sidebar_button6">
+          <i class="material-icons">school</i><p class="sidebar_button_txt">USTropics Library</p>
+          <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+        </div>
+        <div class="sidebar_button" id="sidebar_button7">
+          <i class="material-icons">bookmarks</i><p class="sidebar_button_txt">Links List</p>
+          <span class="home_arrow"><i class="material-icons">keyboard_arrow_down</i></span>
+        </div>
+        <div class="sidebar_menu_wrapper">
+          <div class="menu_wrapper_buttons" id="sidebar_notifications_wrapper">
+          <span class="notification_icon"><i class="material-icons md-18">notification_important</i></span>
+          </div>
+          <div class="menu_wrapper_buttons" id="sidebar_contactus_wrapper">
+          <span class="contactus_icon"><i class="material-icons md-18">chat</i></span>
+          </div>
+          <div class="menu_wrapper_buttons" id="sidebar_settings_wrapper">
+          <span class="settings_icon"><i class="material-icons md-18">construction</i></span>
+          </div>
+          <div class="menu_wrapper_buttons" id="sidebar_logout_wrapper">
+          <span class="notification_icon"><i class="material-icons md-18">power_off</i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="main_content_wrapper">
+      <div class="topbar_wrapper">
+        <div class="open_button_wrapper" id="open_button_wrapper"><button class="openbtn" onclick="openNav()">☰ Open Sidebar</button></div>
+        <div class="topbar_profile_wrapper">
+          <div class="top_bar_right">
+            <div class="navbar">
+    <!--          <a href="#home">Home</a> !-->
+    <!--           <a href="#news">News</a> !-->
+              {% if user.is_authenticated %}
+              <div class="dropdown">
+                <button class="dropbtn">
+                  <a class="topbar_inbox_link" href="{% url 'messages_inbox' %}" >
+                    {% inbox_count as inbox_var %}
+                    {% if inbox_var == 0 %}
+                    {% else %}
+                    <div class="top_mailbox_wrapper">
+                    <div class="inbox_count_value">
+                    </div>
+                      {% inbox_count %}
+                    </div>
+                    {% endif %}
+                  <div class="mail_icon_wrapper">
+                    <div class="mail_icon_img">
+                      &#9993;
+                    </div>
+                  </div>
+                </a>
+                      <div class="profile_name_wrapper">
+                        <div class="top_profile_wrapper">
+                          <img class="top_profile_img" src="{{ request.user.profile.image.url }}" />
+                        </div>
+                          <p class="profile_name">{{request.user.username}}</p>
+                      </div>
+                        <div class="top_arrow_wrapper"><i class="arrow down"></i>
+                        </div>
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="{% url 'profile' %}">Your Profile</a>
+                  <a href="{% url 'messages_inbox' %}">Inbox</a>
+                  <a href="{% url 'logout' %}">Logout</a>
+                  {% if user.is_superuser %}
+                  <hr class="admin_line_break"></hr>
+                  <a href="{% url 'post-create' %}">New Post</a>
+                  <a href="{% url 'admin:index' %}">Admin CP</a>
+                  {% endif %}
+                </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        </div>
+      </div>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+      <h2>Some Content Goes Here</h2>
+      <p>Body content will be placed here in the future.</p>
+    </div>
+  </div>
+
+<script type="text/javascript" src="{% static 'jss/sidebar.js' %}"></script>
+
+</body>
+</html>
